@@ -1,0 +1,212 @@
+:root {
+    --primary-color: #2d6a4f;
+    --secondary-color: #52b788;
+    --background-light: #f8f9fa;
+    --text-dark: #2d3142;
+    --sidebar-bg: #1b4332;
+    --white: #ffffff;
+    --accent-color: #d8f3dc;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    padding-top: 50px; /* DESPLAZAMIENTO: Empuja todo el contenido abajo para dejar espacio al banner fijo */
+}
+
+/* Sidebar Navigation */
+aside {
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    position: fixed;
+    top: 50px; /* DESPLAZAMIENTO: Comienza justo debajo del banner */
+    height: calc(100vh - 50px); /* Ajusta la altura restando los 50px del banner */
+    box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+    overflow-y: auto;
+}
+
+.sidebar-brand {
+    padding: 10px 25px 25px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.nav-link {
+    display: block;
+    text-decoration: none;
+    color: rgba(255,255,255,0.8);
+    padding: 15px 25px;
+    text-align: left;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    border-left: 4px solid transparent;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--white);
+    background-color: rgba(255,255,255,0.1);
+    border-left: 4px solid var(--secondary-color);
+}
+
+/* Content Container */
+main {
+    margin-left: 260px;
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.content-card {
+    background: var(--white);
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+ul, ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.media-container {
+    margin: 25px 0;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    background: #000;
+}
+
+/* Evaluation Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* ==========================================
+   ESTILOS ADICIONALES PARA EL BANNER DE WIX
+   ========================================== */
+.BnSWEo { width: 100%; }
+.BnSWEo.uOsHYT { z-index: 9999; position: fixed; top: 0; left: 0; }
+
+._Gifr2 .FGPGIH { 
+    box-sizing: border-box; 
+    background: #eff1f2; 
+    border-bottom: 1px solid #166aea; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    height: 50px; 
+    display: flex; 
+    text-decoration: none; 
+    transition: background 0.2s;
+}
+
+._Gifr2 .FGPGIH > .siPsSS { align-items: center; display: flex; }
+._Gifr2 .FGPGIH > .siPsSS .RG5MFM { color: #20303c; font-size: 16px; font-weight: 400; display: flex; align-items: center; }
+._Gifr2 .FGPGIH > .siPsSS .ZXZxQl { margin: 0 10px; display: inline-flex; }
+._Gifr2 .FGPGIH > .siPsSS .UDO2pA { border-right: 1px solid #000; padding-right: 8px; display: flex; align-items: center; }
+
+._Gifr2 .FGPGIH .zAqGm2 { 
+    text-align: center; 
+    color: #166aea; 
+    border: 1px solid #166aea; 
+    border-radius: 17px; 
+    width: 112px; 
+    height: 25px; 
+    font-size: 14px; 
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-left: 16px; 
+    background-color: transparent;
+    transition: all 0.2s ease; 
+    font-weight: 500;
+}
+
+._Gifr2 .FGPGIH:hover .zAqGm2 { 
+    background-color: #166aea !important; 
+    color: #ffffff !important;           
+    cursor: pointer;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding-top: 50px;
+    }
+    aside {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0; /* Cancela el top fijo en pantallas pequeñas */
+    }
+    main {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
