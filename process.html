@@ -242,11 +242,38 @@
         // Verificación de Quiz de Video
         function verifyVideoQuiz() {
             const feedback = document.getElementById('quiz-feedback');
-            
-            // Obtener respuestas seleccionadas
+
             const q1 = document.querySelector('input[name="q1"]:checked');
             const q2 = document.querySelector('input[name="q2"]:checked');
             const q3 = document.querySelector('input[name="q3"]:checked');
             const q4 = document.querySelector('input[name="q4"]:checked');
 
-            // Verif
+            if (!q1 || !q2 || !q3 || !q4) {
+                feedback.style.color = 'orange';
+                feedback.textContent = 'Please answer all four questions before checking.';
+                return;
+            }
+
+            const correctAnswers = {
+                q1: 'dam',
+                q2: 'deer',
+                q3: 'puddle',
+                q4: 'glass'
+            };
+
+            const isCorrect = q1.value === correctAnswers.q1
+                && q2.value === correctAnswers.q2
+                && q3.value === correctAnswers.q3
+                && q4.value === correctAnswers.q4;
+
+            if (isCorrect) {
+                feedback.style.color = 'green';
+                feedback.textContent = 'Excellent! Your answers are correct.';
+            } else {
+                feedback.style.color = 'red';
+                feedback.textContent = 'Some answers are incorrect. Review the videos and try again.';
+            }
+        }
+    </script>
+</body>
+</html>
