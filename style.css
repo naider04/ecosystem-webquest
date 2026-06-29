@@ -210,3 +210,13 @@ tr:nth-child(even) {
         padding: 20px;
     }
 }
+
+/* Estilo para imágenes dentro del contenido */
+.content-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 25px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
